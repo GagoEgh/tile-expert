@@ -1,0 +1,96 @@
+:host{
+  color: gray;
+}
+
+.cbx {
+    position: relative;
+    display: block;
+    float: left;
+    width: 18px;
+    height: 18px;
+    border-radius: 4px;
+    background-color: white;
+    box-shadow: inset 0 1px 1px rgb(49 47 47 / 15%), inset 0 -1px 1px rgba(0,0,0,0.15);
+    transition: all 0.15s ease;
+    
+}
+
+.my{
+    display: flex;
+    justify-self: center;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+}
+
+.inp{
+    padding: 5px;
+    border: none;
+    border: 1px solid #efefef;
+    outline: transparent;
+}
+
+input[type='text']{
+    width: 80%;
+}
+
+.cbx svg {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke: #fff;
+    stroke-width: 2;
+    stroke-dasharray: 17;
+    stroke-dashoffset: 17;
+    transform: translate3d(0, 0, 0);
+  }
+  
+  .cbx + span
+   {
+    float: left;
+    margin-left: 6px;
+  }
+  
+  .forms {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 100px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border: 1px solid rgb(99 99 99 / 12%);
+    padding: 20px;
+    user-select: none;
+    width: fit-content;
+  }
+  
+  .forms label {
+    display: inline-block;
+    margin: 10px;
+    cursor: pointer;
+  }
+  
+  .forms input[type="checkbox"],
+  .forms input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+  }
+  
+  
+  .forms input[type="checkbox"]:checked + .cbx {
+    background-color: white;
+    background-image: linear-gradient(#bbe016, #bbe016)
+  }
+  
+  .forms input[type="checkbox"]:checked + .cbx svg {
+    stroke-dashoffset: 0;
+    transition: all 0.15s ease;
+  }
+  
+  @media screen and (max-width: 415px) {
+    .forms{
+      width: 95%;
+      padding: 0;
+    }
+  }

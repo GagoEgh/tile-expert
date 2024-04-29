@@ -1,0 +1,179 @@
+* {
+	border: 0;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body{
+    position: relative;
+}
+
+.search-box{
+	position: absolute;
+	left: -11%;
+	top: 78%;
+	z-index: 333;
+}
+  
+.boxNone{
+	display: none;
+} 
+
+.content{
+	display: block;
+}
+
+button, input {
+	line-height: 1.5em;
+}
+
+body, input {
+	color: #171717;
+}
+
+body, .search-bar {
+	display: flex;
+}
+
+.search-bar input,
+.search-btn, 
+.search-btn:before {
+	transition: all 0.25s ease-out;
+}
+
+.search-bar input,
+.search-btn {
+	width: 3em;
+	height: 3em;
+}
+
+.search-bar input:invalid:not(:focus),
+.search-btn {
+	cursor: pointer;
+}
+
+.search-bar,
+.search-bar input:focus
+ {
+	width: 100%;
+}
+
+.search-bar input:focus,
+.search-bar input:not(:focus) + .search-btn:focus {
+	outline: transparent;
+}
+
+.search-bar {
+	margin: auto;
+	padding: 1.5em;
+	justify-content: end;
+}
+
+.search-bar input {
+	background: transparent;
+	border-radius: 1.5em;
+    box-shadow: 0 0 0 0.4em white inset;
+	padding: 0.75em;
+	transform: translate(0.3em,0.3em) scale(0.3);
+	transform-origin: 100% 40%;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+.search-bar input::-webkit-search-decoration {
+	-webkit-appearance: none;
+}
+
+.search-bar input:focus,
+.search-bar input:valid {
+	background: #fff;
+	border-radius: 0.375em 0 0 0.375em;
+	box-shadow: 0 0 0 0.1em #d9d9d9 inset;
+	transform: scale(1);
+}
+
+.search-btn {
+    background: white;
+	border-radius: 0 0.75em 0.75em 0 / 0 1.5em 1.5em 0;
+	padding: 0.75em;
+	position: relative;
+    transform: translate(0.12em,0.35em) rotate(45deg) scale(0.25,0.05);
+	transform-origin: 0 50%; 
+}
+
+.search-btn:before{
+	content: "";
+	display: block;
+	opacity: 0;
+	position: absolute;
+}
+
+.search-btn:before {
+    content: 'найти';
+    left: 0.1em;
+    background-color: rgba(221, 172, 9, 0.909);
+    color: white;
+	font-size: 12px;
+}
+
+.search-btn span {
+	display: inline-block;
+	overflow: hidden;
+	width: 1px;
+	height: 1px;
+}
+
+/* Active state */
+.search-bar input:focus + .search-btn,
+.search-bar input:valid + .search-btn {
+    background-color: rgba(221, 172, 9, 0.909);
+	border-radius: 0 0.375em 0.375em 0;
+	transform: scale(1);
+}
+
+.search-bar input:focus + .search-btn:before,
+.search-bar input:valid + .search-btn:before {
+	opacity: 1;
+}
+
+.search-bar input:focus + .search-btn:hover,
+.search-bar input:valid + .search-btn:hover,
+.search-bar input:valid:not(:focus) + .search-btn:focus {
+    background-color: rgba(221, 172, 9, 0.909);
+}
+
+.search-bar input:focus + .search-btn:active,
+.search-bar input:valid + .search-btn:active {
+	transform: translateY(1px);
+}
+
+@media screen and (max-width: 415px) {
+
+	.search-box{
+		position: absolute;
+		left: -170px;
+		top: 70px;
+		z-index: 333;
+	}
+	  
+	.search-bar,
+	.search-bar input:focus{
+		width: 300px;
+	}
+
+	.search-btn {
+		border-radius: 0 0.75em 0.75em 0 / 0 1.5em 1.5em 0;
+		transform: translate(0.12em,0.35em) rotate(45deg) scale(0.25,0.05);
+		transform-origin: 0 50%; 
+	}
+	
+	.search-btn span {
+		display: inline-block;
+		overflow: hidden;
+		width: 15px;
+		height: 15px;
+	}
+	
+}

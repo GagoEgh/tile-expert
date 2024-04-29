@@ -1,0 +1,9 @@
+<ul class="nav">
+    <li class="nav-li" *ngFor="let item of path">
+        {{item.name}}
+        <ng-container *ngIf="item.isSvg">
+            <img class="li-img" src="../../../assets/icons/drop_down.svg" alt="nk">
+        </ng-container>
+    </li>
+    <app-search class="box"></app-search>
+</ul>
